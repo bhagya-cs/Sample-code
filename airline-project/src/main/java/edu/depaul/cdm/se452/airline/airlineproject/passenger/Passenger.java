@@ -1,9 +1,18 @@
 package edu.depaul.cdm.se452.airline.airlineproject.passenger;
 
+import java.util.List;
+
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Singular;
 
 /**
  * Demonstrate what I learned while researching Lombok, there were more features such as 
@@ -13,6 +22,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
 public class Passenger {
+    @Id
+    @GeneratedValue
+    private long id;
+
+    @Embedded
     private Person person;
 }

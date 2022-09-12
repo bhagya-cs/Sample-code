@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import edu.depaul.cdm.se452.se452demo.concepts.relational.basic.CourseRepository;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -29,4 +30,14 @@ public class App {
 			log.error("Error");
 		};
 	}
+
+	@Bean
+	public CommandLineRunner showCourseList(CourseRepository repo) {
+		return (args) -> {
+			log.info("Num " + repo.count());
+		};
+	}
+
+
+
 }

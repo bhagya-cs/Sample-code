@@ -2,4 +2,15 @@ environment: development
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
+
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    defer-datasource-initialization: true
+
+# spring.datasource.data = classpath:/data.sql
+#spring.datasource.schema = classpath:/schema.sql
+#jpa:
+#  hibernate.ddl-auto: create-drop    #always recreate table in test      

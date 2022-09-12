@@ -1,0 +1,1 @@
+    insert into airport(code, city, state) values ('DAL', 'Dallas', 'TX');
