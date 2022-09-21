@@ -27,7 +27,15 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
   	implementation 'org.springframework.boot:spring-boot-starter-web'
+
 	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+  	implementation 'org.springdoc:springdoc-openapi-common:1.6.11'
+  	implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.11'
+  	implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
+
 
   	modules {
         module("org.springframework.boot:spring-boot-starter-logging") {

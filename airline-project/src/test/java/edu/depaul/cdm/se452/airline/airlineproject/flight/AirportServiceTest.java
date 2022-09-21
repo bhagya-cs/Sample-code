@@ -11,14 +11,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import lombok.val;
 
 @SpringBootTest
-public class FlightTest {
+public class AirportServiceTest {
     @Autowired
     private AirportRepository airportRepository;
     
     @Test
     public void testAddFlight() {
         val ohare = new Airport("ORD", "Chicago", "IL");
-        val dal = new Airport("DAL", "Dallas", "TX");
+        val dal = new Airport("MIL", "Milwaukee", "WI");
         
         val b4 = airportRepository.count();
         airportRepository.save(ohare);

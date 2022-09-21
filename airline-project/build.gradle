@@ -31,6 +31,19 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
+	runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+  	implementation 'org.springdoc:springdoc-openapi-common:1.6.11'
+  	implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.11'
+  	implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
+
+
+  	modules {
+        module("org.springframework.boot:spring-boot-starter-logging") {
+            replacedBy("org.springframework.boot:spring-boot-starter-log4j2", "Use Log4j2 instead of Logback")
+        }
+    }
 
 }
 
