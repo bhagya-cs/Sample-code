@@ -1,7 +1,13 @@
-## Purpose
+# Purpose
 This is sample code associated with [DePaul SE452](http://www.cdm.depaul.edu/academics/pages/courseinfo.aspx?Subject=SE&CatalogNbr=452) project sample using airline reservation as problem domain.
 <br>
 * Milestone 1: Define the project and base structure and areas where each members will be working on
+<br>
+* Milestone 2: Added base Entity 
+<br>
+* Milestone 3: Added Services and some relationships.  Ran into a LOT of issues due to circular dependencies.
+<br>
+
 
 ## Project Members
 
@@ -30,4 +36,9 @@ Will meet using Slack and Github.   Will meet once a week after class.
 | 3 | Code  | Lombok | Code template code | We have done too many template code and so don't need to learn that
 | 4 | Configuration Management  | Yaml | Properties | Easier to view groups of configuration and it is different than what we learned in other classes with property files and so using this opporutnity to learn something different
 
+## Lessons Learned
+| # | Area | Leasson Learned 
+| -- | --- | --- |
+| 1 | Updating objects | Need to rerun JUnit test on builds
+| 2 | Relationship | Watch out for circular relationships, be sure to add ToString.Exclude for Lombok and JsonIdentityInfo for Json building
 

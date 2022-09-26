@@ -55,7 +55,7 @@ public class StudentServiceTest {
     @Test
     public void addStudent() throws Exception {
 		// given - setup or precondition
-		Student student = Student.builder().name("peter parker").email("peterparker@nyu.edu").build();
+		Student student = Student.builder().name("peter parker").email("peterparker@nyu.edu").age(20).build();
 		String studentAsJson = objectMapper.writeValueAsString(student);
 
 		long beforeSize = studentRepository.count();
@@ -97,7 +97,7 @@ public class StudentServiceTest {
     @Test
     public void addStudentValidationPass() throws Exception {
 		// given - setup or precondition
-		Student student = Student.builder().name("peter parker").email("peter@nyu.edu").build();
+		Student student = Student.builder().name("peter parker").email("peter@nyu.edu").age(20).build();
 		String studentAsJson = objectMapper.writeValueAsString(student);
 
 		long beforeSize = studentRepository.count();

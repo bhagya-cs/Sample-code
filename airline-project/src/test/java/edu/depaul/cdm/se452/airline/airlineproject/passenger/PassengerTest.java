@@ -21,7 +21,7 @@ public class PassengerTest {
 
         String expectedError = "Person=(firstName=Pat, lastName=Sajak)";
         String expectedNoError = "Passenger(id=0, person=Person(firstName=Pat, lastName=Sajak))";
-        assertEquals(expectedNoError, passenger.toString());       
+        assertEquals(expectedNoError.substring(0, expectedNoError.length() - 1), passenger.toString().substring(0, expectedNoError.length() - 1));       
 
     }    
 

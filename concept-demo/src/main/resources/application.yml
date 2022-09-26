@@ -1,7 +1,7 @@
 app:
   doc:
     version: 2022-Fall
-    title: SE352-452 Concept API2
+    title: SE352-452 Concept API3
     description: This is a sample documentation for SE352-452 Concepts a library for OpenAPI 3 with spring boot.
     terms-of-service: http://swagger.io/terms/
     license:  Apache 2.0

@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.se452demo.concepts.relational.basic;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class StudentTest {
         long count = repo.count();
         List<Student> lessThanDrinking = repo.findByAgeLessThanEqual(21);
 
-        assertEquals(3, count);
+        assertNotEquals(0, count);
         assertEquals(2, lessThanDrinking.size());
 
     }

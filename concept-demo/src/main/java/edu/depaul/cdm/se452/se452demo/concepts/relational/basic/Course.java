@@ -1,9 +1,15 @@
 package edu.depaul.cdm.se452.se452demo.concepts.relational.basic;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -27,4 +33,5 @@ public class Course {
     @NotBlank
     @Size(min= 2,max = 7, message = "dept num must be between 2 and 6 characters")
     private String num;
+
 }

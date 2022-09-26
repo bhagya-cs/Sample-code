@@ -23,7 +23,7 @@ import java.util.List;
 // Ensure there is no port conflict when running JUnit test
 @SpringBootTest
 @AutoConfigureMockMvc
-public class Airport {
+public class AirportTest {
     private static final String URL = "/api/airports";
 
     @Autowired

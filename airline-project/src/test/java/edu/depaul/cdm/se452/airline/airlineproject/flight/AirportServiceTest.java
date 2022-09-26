@@ -17,9 +17,16 @@ public class AirportServiceTest {
     
     @Test
     public void testAddFlight() {
-        val ohare = new Airport("ORD", "Chicago", "IL");
-        val dal = new Airport("MIL", "Milwaukee", "WI");
+        val ohare = new Airport();
+        val dal = new Airport();
         
+        ohare.setCode("TRD");
+        ohare.setCity("Chicago");
+        ohare.setState("IL");
+        dal.setCode("TAL");
+        dal.setCity("Dallas");
+        dal.setState("TX");
+
         val b4 = airportRepository.count();
         airportRepository.save(ohare);
         airportRepository.save(dal);

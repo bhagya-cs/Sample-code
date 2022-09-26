@@ -2,7 +2,8 @@ environment: development
 
 logging:
   level:
-    root: DEBUG
+    root: INFO
+    org.hibernate.SQL: DEBUG
 
 spring:
   datasource:
