@@ -16,6 +16,7 @@ spring:
 
 
 
+
 # spring.datasource.data = classpath:/data.sql
 #spring.datasource.schema = classpath:/schema.sql
 #jpa:

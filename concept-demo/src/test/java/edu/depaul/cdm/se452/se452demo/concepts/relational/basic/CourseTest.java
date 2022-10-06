@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import lombok.val;
-
 // Need to get Autowired to work
 @SpringBootTest
 public class CourseTest {
@@ -21,14 +19,14 @@ public class CourseTest {
      */
     @Test
     public void testCrud() {
-        var orgCourse = new Course();
+        Course orgCourse = new Course();
         orgCourse.setDept("SE");
         orgCourse.setNum("452");
-        var b4Count = repo.count();
-        var b4Id = orgCourse.getId();
+        long b4Count = repo.count();
+        long b4Id = orgCourse.getId();
         repo.save(orgCourse);
-        var afterCount = repo.count();
-        var afterId = orgCourse.getId();
+        long afterCount = repo.count();
+        long afterId = orgCourse.getId();
 
         // there should be 1 more in the database after the save
         assertEquals(b4Count + 1, afterCount);
@@ -38,12 +36,12 @@ public class CourseTest {
 
         // Scenario of updating cross listing
         // Be sure to find the reference from the database before the update
-        var updated = repo.findById(afterId).orElse(new Course());
-        val crossListed = "352-452";
+        Course updated = repo.findById(afterId).orElse(new Course());
+        String crossListed = "352-452";
         updated.setNum(crossListed);
         repo.save(updated);
 
-        var updatedCheck = repo.findById(afterId).orElse(new Course());
+        Course updatedCheck = repo.findById(afterId).orElse(new Course());
         assertNotEquals(updatedCheck, orgCourse);
         assertEquals(crossListed, updatedCheck.getNum());
 

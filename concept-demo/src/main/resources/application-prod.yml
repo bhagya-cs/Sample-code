@@ -5,5 +5,11 @@ logging:
     root: ERROR
 
 spring:
-    datasource:
-      url: jdbc:h2:mem:se452prod
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/se452db
+    username: postgres
+    password: password
