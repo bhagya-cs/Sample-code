@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.3'
-	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 	id 'java'
 }
 
@@ -33,11 +33,21 @@ dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+  	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	// React
+  	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    testImplementation 'io.projectreactor:reactor-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+
   	implementation 'org.springdoc:springdoc-openapi-common:1.6.11'
   	implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.11'
   	implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
 
 
+	
   	modules {
         module("org.springframework.boot:spring-boot-starter-logging") {
             replacedBy("org.springframework.boot:spring-boot-starter-log4j2", "Use Log4j2 instead of Logback")
@@ -49,6 +59,4 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-tasks.named('jar') {
-	enabled = false
-}
+

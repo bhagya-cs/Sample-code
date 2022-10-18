@@ -1,10 +1,19 @@
 package edu.depaul.cdm.se452.se452demo;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.cache.CachedStudent;
+import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.cache.CachedStudentRepo;
+import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.data.NoInstructor;
+import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.data.NoInstructorRepo;
+import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.data.NoUniversity;
+import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.data.NoUniversityRepo;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -21,12 +30,22 @@ public class App {
 	@Bean
 	public CommandLineRunner showLogLevel() {
 		return (args) -> {
-			System.out.println(env);
+			log.info(env);
 			log.debug("Debug");
 			log.info("Info");
 			log.warn("Warning");
 			log.error("Error");
 		};
 	}
+
+	@Bean
+	public CommandLineRunner showRedis(CachedStudentRepo repo) {
+		return (args) -> {
+			CachedStudent stu = new CachedStudent();
+			stu.setName("Stu");
+			repo.save(stu);
+		};
+	}
+
 
 }

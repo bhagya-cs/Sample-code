@@ -14,7 +14,7 @@ services:
       ports:
           - $POSTGRES_PORT:$POSTGRES_PORT
       environment:
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: $SQL_PASSWORD
     app:
       depends_on: 
         - postgresql

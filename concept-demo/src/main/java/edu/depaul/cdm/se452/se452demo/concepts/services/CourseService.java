@@ -48,7 +48,7 @@ public class CourseService {
         log.traceEntry("Enter list");
         var retval = repo.findAll();
         log.traceExit("Exit list", retval);        
-        return repo.findAll();
+        return retval;
     }
 
     @PostMapping

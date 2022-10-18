@@ -1,6 +1,9 @@
 # Concept
 Base to introduce to start on tools
 
+# Dependency
+Be sure to start docker-compose using docker-dbonly.yml to start the database
+
 ## 12 Factor concepts [* indicates new]
 
 ### [Disposability](https://12factor.net/disposablility)
@@ -18,7 +21,8 @@ Base to introduce to start on tools
 <br/>
 
 ## Additional VSCode extensions
-### [SQL Tools ](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
-### [Docker *](https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-extension-pack)
+### [MongoDB Tools*](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode)
+### [SQL Tools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+### [Docker](https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-extension-pack)
 <br/>
 
