@@ -11,9 +11,9 @@ Be sure to start docker-compose using docker-dbonly.yml to start the database
 ### [Codebase](https://12factor.net/codebase)
 ### [Dependencies](https://12factor.net/dependencies)
 ### [Config](https://12factor.net/config)
-### [Build, Release, Run*](https://12factor.net/build-release-run)
-### [Port Binding*](https://12factor.net/port-binding)
-### [Backing Services*](https://12factor.net/backing-services)
+### [Build, Release, Run](https://12factor.net/build-release-run)
+### [Port Binding](https://12factor.net/port-binding)
+### [Backing Services](https://12factor.net/backing-services)
 <br/>
 
 ## Additional Tools
@@ -21,8 +21,9 @@ Be sure to start docker-compose using docker-dbonly.yml to start the database
 <br/>
 
 ## Additional VSCode extensions
-### [MongoDB Tools*](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode)
+### [MongoDB Tools](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode)
 ### [SQL Tools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
 ### [Docker](https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-extension-pack)
+### [Redis](https://marketplace.visualstudio.com/items?itemName=Dunn.redis)
 <br/>
 

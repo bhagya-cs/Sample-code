@@ -41,13 +41,6 @@ public class StudentService {
         return student;
     }
 
-    @PostMapping("/valid")
-    public ResponseEntity<Student> saveValidated(@Valid @RequestBody Student student) {
-        log.traceEntry("enter save", student);
-        repo.save(student);
-        log.traceExit("exit save", student);
-        return ResponseEntity.ok(student);
-    }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id ) {

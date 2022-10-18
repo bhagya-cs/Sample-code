@@ -8,8 +8,9 @@ import org.springframework.data.redis.core.RedisHash;
 
 import lombok.Data;
 
+// Time to live in seconds and so 3600 is 1 hour
 @Data
-@RedisHash
+@RedisHash(timeToLive = 3600)
 public class CachedStudent implements Serializable {
     private String id;
     private String name;    

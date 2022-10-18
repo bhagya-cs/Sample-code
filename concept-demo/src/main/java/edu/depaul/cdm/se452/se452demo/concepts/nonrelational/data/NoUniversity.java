@@ -18,8 +18,4 @@ public class NoUniversity {
 
     @DBRef
     private NoInstructor chair;
-
-    private NoInstructor noChair;
-
-    private List<NoInstructor> instructors;
 }

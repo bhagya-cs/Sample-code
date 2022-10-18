@@ -3,7 +3,9 @@ package edu.depaul.cdm.se452.se452demo.concepts.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,5 +36,25 @@ public class NoInstructorService {
         log.traceExit("Exit list", retval);        
         return retval;
     }
+
+    @PostMapping
+    @Operation(summary = "Save the instructor and returns the  id")
+    public String save(NoInstructor instructor) {
+        instructor = repo.findById(instructor.getId()).orElse(new NoInstructor());
+
+        log.traceEntry("enter save", instructor);
+        repo.save(instructor);
+        log.traceExit("exit save", instructor);        
+        return instructor.getId();
+    }
+
+    @DeleteMapping
+    @Operation(summary = "Remove the instructor")
+    public void remove(String id) {
+        log.traceEntry("Enter remove", id);
+        repo.deleteById(id);
+        log.traceExit("Exit remove");
+    }
+
     
 }
