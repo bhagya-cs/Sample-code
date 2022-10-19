@@ -7,6 +7,8 @@ This is sample code associated with [DePaul SE452](http://www.cdm.depaul.edu/aca
 <br>
 * Milestone 3: Added Services and some relationships.  Ran into a LOT of issues due to circular dependencies.
 <br>
+* Milestone 4: Added Redis NoSQL for Airport and refactored Flight
+<br>
 
 
 ## Project Members

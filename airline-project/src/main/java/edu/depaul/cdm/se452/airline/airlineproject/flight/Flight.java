@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import edu.depaul.cdm.se452.airline.airlineproject.passenger.Passenger;
 import lombok.AllArgsConstructor;
@@ -31,11 +31,15 @@ public class Flight {
 
     private LocalTime departureTime;
 
-    @ManyToOne
-    private Airport origination;
+    private String originationCode;
 
-    @ManyToOne
-    private Airport destination;
+    @Transient
+    private Airport originAirport;
+
+    private String destinationCode;
+
+    @Transient
+    private Airport destAirport;
 
     @ManyToMany
     @JoinTable(name = "flight_passenger", 

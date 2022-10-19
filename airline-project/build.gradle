@@ -29,6 +29,11 @@ dependencies {
 	// multiple database drivers to allow swich based on properties
 	runtimeOnly 'com.h2database:h2'
 
+	// NoSQL
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'

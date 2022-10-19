@@ -1,9 +1,7 @@
 package edu.depaul.cdm.se452.airline.airlineproject.flight;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.repository.CrudRepository;
 
-@RepositoryRestResource(collectionResourceRel = "airports", path = "airports")
-public interface AirportRepository extends JpaRepository<Airport, String> {
+public interface AirportRepository extends CrudRepository<Airport, String> {
     
 }
