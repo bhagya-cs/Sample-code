@@ -12,5 +12,12 @@ spring:
     active: dev
 
 #server:
+#  ssl:
+#    key-store: classpath:conceptdemo.jks
+#    key-store-type: pkcs12
+#    key-store-password: password
+#    key-alias: conceptdemo
+#  port: 8443
+#server:
 #  port: 8181
 #  servlet.context-path: /concept-demo

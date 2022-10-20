@@ -34,4 +34,5 @@ public class Course {
     @Size(min= 2,max = 7, message = "dept num must be between 2 and 6 characters")
     private String num;
 
+
 }

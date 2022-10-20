@@ -16,4 +16,6 @@ public class NoInstructor {
     private String name;
 
     private List<String> skills;
+
+    private int numOfYearsTaught;
 }
