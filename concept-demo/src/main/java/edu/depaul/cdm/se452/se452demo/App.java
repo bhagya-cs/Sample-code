@@ -1,5 +1,8 @@
 package edu.depaul.cdm.se452.se452demo;
 
+import java.util.HashSet;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +11,8 @@ import org.springframework.context.annotation.Bean;
 
 import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.cache.CachedStudent;
 import edu.depaul.cdm.se452.se452demo.concepts.nonrelational.cache.CachedStudentRepo;
-
+import edu.depaul.cdm.se452.se452demo.concepts.security.relational.RegistrationService;
+import edu.depaul.cdm.se452.se452demo.concepts.security.relational.SignupRequest;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -33,12 +37,17 @@ public class App {
 		};
 	}
 
-	@Bean
-	public CommandLineRunner showRedis(CachedStudentRepo repo) {
+//	@Bean
+	public CommandLineRunner addUser(RegistrationService register) {
 		return (args) -> {
-			CachedStudent stu = new CachedStudent();
-			stu.setName("Stu");
-			repo.save(stu);
+			var request = new SignupRequest();
+			request.setUsername("sql-user");
+			request.setPassword("password");
+			request.setEmail("sql-user@depaul.edu");
+			var roles = new HashSet<String>();
+			roles.add("ADMIN");
+			request.setRole(roles);
+			register.registerUser(request);
 		};
 	}
 

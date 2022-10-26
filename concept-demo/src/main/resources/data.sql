@@ -8,3 +8,6 @@ insert into instructor(name) values ('Ken');
 
 insert into university(name) values ('DePaul');
 insert into university(name) values ('Loyola');
+
+INSERT INTO user_roles(name) VALUES('ROLE_USER');
+INSERT INTO user_roles(name) VALUES('ROLE_ADMIN');

@@ -23,6 +23,10 @@ spring:
     host: localhost
     port: 6379
 
+  security:
+#    user:
+#      name: user
+#      password: password
 
 # spring.datasource.data = classpath:/data.sql
 #spring.datasource.schema = classpath:/schema.sql

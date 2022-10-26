@@ -6,11 +6,20 @@ app:
     terms-of-service: http://swagger.io/terms/
     license:  Apache 2.0
     url: http://springdoc.org
+  jwt:
+    secret: se452secretKey
+    expirationMs: 36000000  #10 min
+    cookieName: se452scretcookie
 
 spring:
   profiles:
     active: dev
 
-#server:
-#  port: 8181
+server:
 #  servlet.context-path: /concept-demo
+  ssl:
+    key-store: classpath:conceptdemo.jks
+    key-store-type: pkcs12
+    key-store-password: password
+    key-alias: conceptdemo
+  port: 8443
