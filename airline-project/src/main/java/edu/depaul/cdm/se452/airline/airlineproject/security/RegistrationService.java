@@ -19,7 +19,7 @@ public class RegistrationService {
     @Autowired
     private UserRoleRepository roleRepository;
 
-//    @Autowired
+    @Autowired
     private PasswordEncoder encoder;
 
 

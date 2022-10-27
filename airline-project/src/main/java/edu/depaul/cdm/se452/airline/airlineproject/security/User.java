@@ -2,12 +2,11 @@ package edu.depaul.cdm.se452.airline.airlineproject.security;
 
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -19,7 +18,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 @Builder
 @Document(collection = "Users")
 public class User {
