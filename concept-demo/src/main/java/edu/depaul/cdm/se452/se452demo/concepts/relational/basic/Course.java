@@ -1,5 +1,6 @@
 package edu.depaul.cdm.se452.se452demo.concepts.relational.basic;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -10,8 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
@@ -33,5 +37,11 @@ public class Course {
     @NotBlank
     @Size(min= 2,max = 7, message = "dept num must be between 2 and 6 characters")
     private String num;
+
+    @Future
+    private LocalDate nextAvailableDate;
+
+    @Email(regexp = ".+[@].+[\\.].+", message = "{email.valid}")
+    private String courseContactEmail;
 
 }
