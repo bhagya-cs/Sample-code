@@ -14,6 +14,11 @@ app:
 spring:
   profiles:
     active: dev
+    include: security-register, security-jwt
+#security-inmem-no-role 
+#security-inmem-role
+#security-register, security-sql
+#security-register, security-jwt
 
 server:
 #  servlet.context-path: /concept-demo

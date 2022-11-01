@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-// @RestController
-// @RequestMapping("/api/auth")
+@RestController
+@RequestMapping("/api/auth")
+@Profile("security-register")
 public class RegistrationService {
     @Autowired
     private UserRepository userRepository;
@@ -23,7 +25,7 @@ public class RegistrationService {
     @Autowired
     private UserRoleRepository roleRepository;
 
-//    @Autowired
+    @Autowired
     private PasswordEncoder encoder;
 
 

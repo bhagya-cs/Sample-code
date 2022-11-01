@@ -41,7 +41,9 @@ public class Course {
     @Future
     private LocalDate nextAvailableDate;
 
-    @Email(regexp = ".+[@].+[\\.].+", message = "{email.valid}")
+    @Email
+//    @Email(regexp = ".+[@].+[\\.].+", message = "email address must contain @ and .")
+//    @Email(regexp = ".+[@].+[\\.].+", message = "{email.valid}")
     private String courseContactEmail;
 
 }

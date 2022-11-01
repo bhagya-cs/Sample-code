@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -54,6 +55,24 @@ public class CourseService {
         return retval;
     }
 
+
+    @GetMapping("/{id}")
+    @Operation(summary = "Finds the course in the based on id")
+    @ApiResponse(responseCode = "200", description = "valid response", 
+        content = {@Content(mediaType="application/json", schema=@Schema(implementation=Course.class))})
+    @ApiResponse(responseCode = "404", description = "id was not found", 
+        content = {@Content(mediaType="application/json", schema=@Schema(implementation=Course.class))})
+    public ResponseEntity<Course> findCourse(@PathVariable("id") Long id) {
+        log.traceEntry("Enter list");
+        var retval = repo.findById(id);
+        if (retval == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            log.traceExit("Exit list", retval);        
+            return ResponseEntity.ok(retval.get());
+        }
+    }
+
     @PostMapping
     @Operation(summary = "Save the course and returns the course id")
     public long save(Course course) {
@@ -82,12 +101,20 @@ public class CourseService {
 
     @DeleteMapping("/validated/{id}")
     @Operation(summary = "Validated delete the course")
-    public void deleteWithValidation(@PathVariable @Min(1) long id) {
+    public ResponseEntity<String> deleteWithValidation(@PathVariable @Min(1) Long id) {
         log.traceEntry("Enter delete", id);
-        repo.deleteById(id);
-        log.traceExit("Exit delete");
+        try {
+            repo.deleteById(id);
+            String responseMessage = String.format("%d was successfully deleted", id);
+            return ResponseEntity.ok(responseMessage);
+        } catch (EmptyResultDataAccessException erdae){
+            return ResponseEntity.notFound().build();
+        } finally {
+            log.traceExit("Exit delete");
+        }
     }
     
+ /* 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
@@ -99,4 +126,5 @@ public class CourseService {
         });
         return errors;
     }
+*/    
 }

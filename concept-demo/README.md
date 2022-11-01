@@ -1,5 +1,6 @@
 # Concept
-Base to introduce to start on tools
+Misc concepts
+#### Such as validation
 
 # Dependency
 Be sure to start docker-compose using docker-dbonly.yml to start the database
