@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,29 +47,28 @@ public class CourseService {
 
     @GetMapping
     @Operation(summary = "Returns all the course in the database")
-    @ApiResponse(responseCode = "200", description = "valid response", 
-        content = {@Content(mediaType="application/json", schema=@Schema(implementation=Course.class))})
+    @ApiResponse(responseCode = "200", description = "valid response", content = {
+            @Content(mediaType = "application/json", schema = @Schema(implementation = Course.class)) })
     public List<Course> list() {
         log.traceEntry("Enter list");
         var retval = repo.findAll();
-        log.traceExit("Exit list", retval);        
+        log.traceExit("Exit list", retval);
         return retval;
     }
 
-
     @GetMapping("/{id}")
     @Operation(summary = "Finds the course in the based on id")
-    @ApiResponse(responseCode = "200", description = "valid response", 
-        content = {@Content(mediaType="application/json", schema=@Schema(implementation=Course.class))})
-    @ApiResponse(responseCode = "404", description = "id was not found", 
-        content = {@Content(mediaType="application/json", schema=@Schema(implementation=Course.class))})
+    @ApiResponse(responseCode = "200", description = "valid response", content = {
+            @Content(mediaType = "application/json", schema = @Schema(implementation = Course.class)) })
+    @ApiResponse(responseCode = "404", description = "id was not found", content = {
+            @Content(mediaType = "application/json", schema = @Schema(implementation = Course.class)) })
     public ResponseEntity<Course> findCourse(@PathVariable("id") Long id) {
         log.traceEntry("Enter list");
         var retval = repo.findById(id);
-        if (retval == null) {
+        if (retval.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
-            log.traceExit("Exit list", retval);        
+            log.traceExit("Exit list", retval);
             return ResponseEntity.ok(retval.get());
         }
     }
@@ -78,7 +78,7 @@ public class CourseService {
     public long save(Course course) {
         log.traceEntry("enter save", course);
         repo.save(course);
-        log.traceExit("exit save", course);        
+        log.traceExit("exit save", course);
         return course.getId();
     }
 
@@ -107,14 +107,14 @@ public class CourseService {
             repo.deleteById(id);
             String responseMessage = String.format("%d was successfully deleted", id);
             return ResponseEntity.ok(responseMessage);
-        } catch (EmptyResultDataAccessException erdae){
+        } catch (EmptyResultDataAccessException erdae) {
             return ResponseEntity.notFound().build();
         } finally {
             log.traceExit("Exit delete");
         }
     }
-    
- /* 
+
+     /*  
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
@@ -125,6 +125,7 @@ public class CourseService {
             errors.put(fieldName, errorMessage);
         });
         return errors;
-    }
-*/    
+    }   
+    */ 
+
 }

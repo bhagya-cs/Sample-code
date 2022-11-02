@@ -14,6 +14,8 @@ app:
 spring:
   profiles:
     active: dev
+#    include: security-inmem-role
+#    include: security-inmem-role, application-error-handling
     include: security-register, security-jwt
 #security-inmem-no-role 
 #security-inmem-role
