@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### React and front end
+**/src/main/react-web/node_modules/**/
+**/src/main/react-web/dist/**/
