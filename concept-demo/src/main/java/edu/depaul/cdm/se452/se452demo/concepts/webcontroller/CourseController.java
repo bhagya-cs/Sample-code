@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.se452demo.concepts.web;
+package edu.depaul.cdm.se452.se452demo.concepts.webcontroller;
 
 import javax.servlet.http.HttpSession;
 
