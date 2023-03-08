@@ -1,19 +1,14 @@
 package edu.depaul.cdm.se452.se452demo.concepts.relational.relationship;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-
-import org.apache.commons.lang3.builder.ToStringExclude;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
-import lombok.ToString;
+import lombok.ToString.Exclude;
 
 @Data
 @Entity
@@ -28,7 +23,7 @@ public class School {
     private Address address;
     
     @ManyToOne(fetch = FetchType.EAGER)
-    @ToString.Exclude
+    @Exclude
     private University university;   
 
 }

@@ -2,7 +2,7 @@ package edu.depaul.cdm.se452.se452demo.concepts.services;
 
 import java.util.List;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

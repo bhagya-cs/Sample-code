@@ -2,19 +2,18 @@ package edu.depaul.cdm.se452.se452demo.concepts.relational.relationship;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.hibernate.annotations.Fetch;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -23,6 +22,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.ToString.Exclude;
 
 @Data
 @Entity
@@ -43,6 +43,6 @@ public class University {
       joinColumns = @JoinColumn(name = "university_id", referencedColumnName = "id"), 
       inverseJoinColumns = @JoinColumn(name = "instructor_id", 
       referencedColumnName = "id"))
-    @ToString.Exclude
+    @Exclude
     private List<Instructor> instructors;    
 }
