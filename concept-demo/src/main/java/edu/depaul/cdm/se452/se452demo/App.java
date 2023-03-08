@@ -2,15 +2,12 @@ package edu.depaul.cdm.se452.se452demo;
 
 import java.util.ArrayList;
 
-import org.aspectj.apache.bcel.generic.Instruction;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.dao.DeadlockLoserDataAccessException;
 
-import edu.depaul.cdm.se452.se452demo.concepts.relational.basic.CourseRepository;
 import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.Address;
 import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.AddressRepository;
 import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.Instructor;
@@ -20,10 +17,6 @@ import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.SchoolRep
 import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.University;
 import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.UniversityRepository;
 import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.UniversityService;
-import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.inheritance.HourlyEmployee;
-import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.inheritance.HourlyEmployeeRepository;
-import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.inheritance.SalaryEmployee;
-import edu.depaul.cdm.se452.se452demo.concepts.relational.relationship.inheritance.SalaryEmployeeRepository;
 import lombok.val;
 import lombok.extern.log4j.Log4j2;
 
