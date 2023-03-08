@@ -1,6 +1,6 @@
 package edu.depaul.cdm.se452.se452demo.concepts.security.jwt;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 import lombok.Data;
 

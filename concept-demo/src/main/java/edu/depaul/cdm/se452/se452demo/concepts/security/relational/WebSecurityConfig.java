@@ -46,10 +46,10 @@ public class WebSecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable()
-				.authorizeRequests().antMatchers("/api/auth/**").permitAll()
-				.antMatchers("/api/test/**").permitAll()
-				.antMatchers("/h2-console/**").permitAll()
-				.antMatchers("/swagger-ui/**").permitAll()
+				.authorizeHttpRequests().requestMatchers("/api/auth/**").permitAll()
+				.requestMatchers("/api/test/**").permitAll()
+				.requestMatchers("/h2-console/**").permitAll()
+				.requestMatchers("/swagger-ui/**").permitAll()
 				.and().formLogin();
 
 		// fix H2 database console: Refused to display ' in a frame because it set
