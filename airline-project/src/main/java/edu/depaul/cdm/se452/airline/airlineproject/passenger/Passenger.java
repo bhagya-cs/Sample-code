@@ -2,11 +2,11 @@ package edu.depaul.cdm.se452.airline.airlineproject.passenger;
 
 import java.util.List;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
