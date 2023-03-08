@@ -1,7 +1,7 @@
 package edu.depaul.cdm.se452.airline.airlineproject.passenger;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
 
 import lombok.Data;
 

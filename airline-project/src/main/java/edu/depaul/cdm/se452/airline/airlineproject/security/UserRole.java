@@ -1,9 +1,9 @@
 package edu.depaul.cdm.se452.airline.airlineproject.security;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
