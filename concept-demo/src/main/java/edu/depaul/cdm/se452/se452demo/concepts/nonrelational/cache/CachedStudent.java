@@ -2,7 +2,7 @@ package edu.depaul.cdm.se452.se452demo.concepts.nonrelational.cache;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 
 import org.springframework.data.redis.core.RedisHash;
 

@@ -1,7 +1,7 @@
 package edu.depaul.cdm.se452.se452demo.concepts.services.validation;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
