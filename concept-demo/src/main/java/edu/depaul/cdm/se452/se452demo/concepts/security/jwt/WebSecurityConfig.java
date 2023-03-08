@@ -63,9 +63,9 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
     http.cors().and().csrf().disable()
         .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-        .authorizeRequests().antMatchers("/api/auth/**").permitAll()
-        .antMatchers("/api/test/**").permitAll()
-        .antMatchers("/h2-console/**").permitAll()
+        .authorizeHttpRequests().requestMatchers("/api/auth/**").permitAll()
+        .requestMatchers("/api/test/**").permitAll()
+        .requestMatchers("/h2-console/**").permitAll()
         .and().formLogin();
 
     // fix H2 database console: Refused to display ' in a frame because it set

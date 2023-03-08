@@ -2,8 +2,8 @@ package edu.depaul.cdm.se452.se452demo.concepts.security.jwt;
 
 import java.util.Date;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;

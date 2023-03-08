@@ -1,6 +1,6 @@
 package edu.depaul.cdm.se452.se452demo.concepts.webcontroller;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;

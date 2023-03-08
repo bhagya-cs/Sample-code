@@ -4,10 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -51,10 +48,10 @@ public class WebSecurityConfigNoRole {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable()
-				.authorizeRequests().antMatchers("/api/auth/**").permitAll()
-				.antMatchers("/api/test/**").permitAll()
-				.antMatchers("/h2-console/**").permitAll()
-				.antMatchers("/swagger-ui/**").permitAll()
+				.authorizeHttpRequests().requestMatchers("/api/auth/**").permitAll()
+				.requestMatchers("/api/test/**").permitAll()
+				.requestMatchers("/h2-console/**").permitAll()
+				.requestMatchers("/swagger-ui/**").permitAll()
 				.and().formLogin();
 
 		// fix H2 database console: Refused to display ' in a frame because it set
