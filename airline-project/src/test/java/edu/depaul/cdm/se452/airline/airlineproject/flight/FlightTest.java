@@ -2,7 +2,6 @@ package edu.depaul.cdm.se452.airline.airlineproject.flight;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.time.LocalTime;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
