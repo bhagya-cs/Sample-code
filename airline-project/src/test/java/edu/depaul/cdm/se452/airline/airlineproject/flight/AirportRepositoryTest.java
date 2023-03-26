@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import lombok.val;
 
 @SpringBootTest
-public class FlightTest {
+public class AirportRepositoryTest {
     @Autowired
     private AirportRepository airportRepository;
     
