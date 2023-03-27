@@ -11,5 +11,6 @@
             "password": "password",
             "database": "se452db"
         }
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
