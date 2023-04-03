@@ -1,5 +1,5 @@
 # Concept
-Base to introduce to start on tools
+Database 
 
 ## Background
 <li> Git
@@ -12,7 +12,7 @@ Base to introduce to start on tools
 
 ### [Codebase](https://12factor.net/codebase)
 ### [Dependencies](https://12factor.net/dependencies)
-### [Config](https://12factor.net/config)
+### [Logs](https://12factor.net/logs)
 <br/>
 
 ## Additional Tools

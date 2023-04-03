@@ -1,8 +1,14 @@
 environment: production
 
 logging:
+  file:
+    name: logs/se452-concept.log
+  pattern:
+    file: "%d %-5level [%thread] %logger : %msg%n"
   level:
-    root: ERROR
+    root: WARN
+    org.springframework: ERROR
+    edu.depaul.cdm.se452: INFO
 
 spring:
     datasource:

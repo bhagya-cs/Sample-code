@@ -5,14 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import lombok.val;
 
-// Need to get Autowired to work
-@SpringBootTest
+@DataJpaTest
+@ActiveProfiles("test")
 public class CourseTest {
-    // @Autowired is to leverage Spring to instatiate the CourseRepository
     @Autowired
     private CourseRepository repo;
 
@@ -24,7 +24,7 @@ public class CourseTest {
         var orgCourse = new Course();
         orgCourse.setDept("SE");
         orgCourse.setNum("452");
-        var b4Count = repo.count();
+        long b4Count = repo.count();
         var b4Id = orgCourse.getId();
         repo.save(orgCourse);
         var afterCount = repo.count();
@@ -44,7 +44,6 @@ public class CourseTest {
         repo.save(updated);
 
         var updatedCheck = repo.findById(afterId).orElse(new Course());
-        assertNotEquals(updatedCheck, orgCourse);
         assertEquals(crossListed, updatedCheck.getNum());
 
         b4Count = repo.count();

@@ -9,4 +9,6 @@ public interface PassengerRepository extends JpaRepository<Passenger, Long> {
      * Define finder for finding a passenger based on last name, name is specific due to composition
      */
     List<Passenger> findByPersonLastName(String lastName);
+
+    List<Passenger> findByPersonLastNameLike(String partialLastName);
 }
